@@ -273,3 +273,76 @@ body::-webkit-scrollbar-thumb {
 .box p{
     color: var(--color-primary);
 }
+
+
+form{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    align-items: center;
+    background-color: var(--color-3);
+    padding: 20px;
+    border-radius: 20px;
+    gap: 1rem;
+    color: var(--color-primary);
+    font-weight: bold;
+}
+.caixa{
+    display: flex;
+    gap: 1rem;
+}
+form input[type='text']{
+    width: 300px;
+    padding: 10px;
+    border-radius: 20px;
+    border: solid 1px var(--color-primary);
+    font-weight: bold;
+}
+
+form button{
+    background-color: var(--color-1);
+    color: var(--color-primary);
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 5px;
+    font-weight: bold;
+    transition: .5s;
+}
+form button:hover{
+    color: var(--color-1);
+    background-color: var(--color-primary);
+    transition: .5s;
+}
+
+form input[type='submit']{
+    background-color: var(--color-1);
+    color: var(--color-primary);
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 5px;
+    font-weight: bold;
+    transition: .5s;
+}
+form input[type='submit']:hover{
+    color: var(--color-1);
+    background-color: var(--color-primary);
+    transition: .5s;
+}
+form input[type='file']{
+    cursor: pointer;
+}
+
+
+.caixa div{
+    font-size: larger;
+    font-weight: bold;
+    background-color: var(--color-3);
+    color: var(--color-primary);
+    width: 400px;
+    padding: 20px;
+    border-radius: 20px;
+}

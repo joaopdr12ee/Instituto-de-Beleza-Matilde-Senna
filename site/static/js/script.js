@@ -46,5 +46,13 @@ document.getElementById("Contato").addEventListener("click", function() {
         behavior: 'smooth'});
 });
 
+function promo(p){
+    if(p == 'S'){
+        document.getElementById('promocao').value = 'Sim'
+    }else{
+        document.getElementById('promocao').value = 'Não'
+    }
+}
 
+checagem();
 iniciarRolagem();
