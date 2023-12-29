@@ -18,8 +18,11 @@ def produtos():
 def inserir():
     nome = request.form.get('nome')
     valor = request.form.get('valor')
-    file = request.files['arquivo']
-    image_string = base64.b64encode(file.read()).decode('utf-8')
+    if request.method == 'POST':
+        file = request.files['arquivo']
+        image_string = base64.b64encode(file.read()).decode('utf-8')
+    else:
+        image_string = ''
     promo = request.form.get('promocao')
 
     return render_template('atualizarbase.html',nomes=f'{nome}',valor=valor,promo=promo, img=image_string)

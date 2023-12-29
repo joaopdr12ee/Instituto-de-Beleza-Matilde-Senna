@@ -225,6 +225,11 @@ body::-webkit-scrollbar-thumb {
     color: green;
     transition: .5s;
 }
+.caixa{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
 
 
 @media only screen and (min-width: 601px) {
@@ -257,6 +262,12 @@ body::-webkit-scrollbar-thumb {
         align-self: baseline;
         height: 300px;
       }
+      .caixa{
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+    }
+
 }
 
 .box .title, .box .content p{
@@ -287,10 +298,7 @@ form{
     color: var(--color-primary);
     font-weight: bold;
 }
-.caixa{
-    display: flex;
-    gap: 1rem;
-}
+
 form input[type='text']{
     width: 300px;
     padding: 10px;
