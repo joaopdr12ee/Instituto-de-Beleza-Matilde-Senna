@@ -48,9 +48,9 @@ document.getElementById("Contato").addEventListener("click", function() {
 
 function promo(p){
     if(p == 'S'){
-        document.getElementById('promocao').value = 'Sim'
+        document.getElementById('promocao').value = '1'
     }else{
-        document.getElementById('promocao').value = 'Não'
+        document.getElementById('promocao').value = '0'
     }
 }
 

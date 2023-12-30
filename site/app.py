@@ -1,5 +1,7 @@
 from flask import Flask, redirect, render_template, request
 import base64
+import backend as msl
+
 
 
 app = Flask(__name__, template_folder='templates')
@@ -24,6 +26,8 @@ def inserir():
     else:
         image_string = ''
     promo = request.form.get('promocao')
+    msl.insere_prod(nome,valor,image_string,promo)
+
 
     return render_template('atualizarbase.html',nomes=f'{nome}',valor=valor,promo=promo, img=image_string)
 
