@@ -14,7 +14,7 @@ def home():
 
 @app.route("/produtos")
 def produtos():
-    return render_template('produtos.html')
+    return render_template('produtos.html',produtos=msl.gera_produtos())
 
 @app.route("/inserir", methods=['POST','GET'])
 def inserir():
@@ -26,7 +26,9 @@ def inserir():
     else:
         image_string = ''
     promo = request.form.get('promocao')
-    msl.insere_prod(nome,valor,image_string,promo)
+    
+    if nome != None:
+        msl.insere_prod(nome,valor,image_string,promo)
 
 
     return render_template('atualizarbase.html',nomes=f'{nome}',valor=valor,promo=promo, img=image_string)

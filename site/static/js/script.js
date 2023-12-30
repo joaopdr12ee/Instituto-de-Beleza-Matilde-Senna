@@ -54,5 +54,9 @@ function promo(p){
     }
 }
 
+
+
+
+
 checagem();
 iniciarRolagem();

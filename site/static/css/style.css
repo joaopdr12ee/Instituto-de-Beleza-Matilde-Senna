@@ -355,3 +355,67 @@ form input[type='file']{
     padding: 20px;
     border-radius: 20px;
 }
+
+.prodcontainer{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+    max-height: 500px;
+}
+.prodcontainer div{
+    background-color: var(--color-1);
+    padding: 15px;
+    border-radius: 20px;
+    margin: 20px;
+    transition: .5s;
+}
+.prodcontainer div:hover{
+    transition: .5s;
+    background-color: var(--color-1);
+    padding: 20px;
+    border-radius: 20px;
+}
+.prodcontainer .pointer{
+    cursor: pointer;
+    transition: .5s;
+}
+.prodcontainer .pointer:hover{
+    color: greenyellow;
+    transition: .5s;
+}
+
+.prodcontainer .pointer2{
+    cursor: pointer;
+    transition: .5s;
+}
+.prodcontainer .pointer2:hover{
+    color: var(--color-primary);
+    transition: .5s;
+}
+
+.prodcontainer img{
+    border-radius: 15px;
+    width: 300px;
+    height: 300px;
+}
+
+
+.carrinho{
+    display: flex;
+    align-items: center;
+    position: fixed;
+    background-color: var(--color-1);
+    color: #111;
+    padding: 15px;
+    border-radius: 20px;
+    right: 5%;
+    bottom: 5%;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.carrinho:hover{
+    color: var(--color-primary);
+    padding: 20px;
+    transition: .5s;
+}

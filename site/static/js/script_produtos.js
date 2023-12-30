@@ -14,3 +14,7 @@ document.getElementById("Contato").addEventListener("click", function() {
     window.scrollTo({top:document.body.scrollHeight - 1000,
         behavior: 'smooth'});
 });
+
+function inserecarrinho(nome, valor){
+    alert(valor);
+}
