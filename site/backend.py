@@ -67,7 +67,7 @@ def gera_produtos():
                 promot = '<p class="prm">Promoção!</p>'
             else:
                 promot = ''
-            produtos+=f"""<div>
+            produtos+=f"""<div class='searched' id='{row[1]}'>
 
                 <img src="data:image/jpeg;base64,{row[3]}" alt="">
                 <p>{row[1]}</p>

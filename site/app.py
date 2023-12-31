@@ -1,10 +1,16 @@
 from flask import Flask, redirect, render_template, request
 import base64
 import backend as msl
+import os
 
 
 
 app = Flask(__name__, template_folder='templates')
+app.config['UPLOAD_FOLDER'] = 'static/archives'
+app.config['ALLOWED_EXTENSIONS'] = {'pdf', 'xlsx', 'xls'}
+
+def allowed_file(filename):
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in app.config['ALLOWED_EXTENSIONS']
 
 
 
@@ -32,6 +38,25 @@ def inserir():
 
 
     return render_template('atualizarbase.html',nomes=f'{nome}',valor=valor,promo=promo, img=image_string)
+
+@app.route("/att", methods=['POST','GET'])
+def attinsert():
+    if request.method == 'POST':
+        # Lida com o upload do PDF
+        if 'pdf_file' in request.files:
+            pdf_file = request.files['pdf_file']
+            if pdf_file.filename != '' and allowed_file(pdf_file.filename):
+                caminho_pdf = os.path.join(app.config['UPLOAD_FOLDER'], 'Prohair.pdf')
+                pdf_file.save(caminho_pdf)
+
+        # Lida com o upload do Excel
+        if 'excel_file' in request.files:
+            excel_file = request.files['excel_file']
+            if excel_file.filename != '' and allowed_file(excel_file.filename):
+                caminho_excel = os.path.join(app.config['UPLOAD_FOLDER'], 'Nuance.xlsx')
+                excel_file.save(caminho_excel)
+
+    return render_template('atualizatabelas.html')
 
 if __name__ == "__main__":
     app.run(debug=True, port=8000)

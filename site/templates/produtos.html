@@ -23,6 +23,7 @@
     </div>
     <div class="container">
         <div class="title">Produtos</div>
+        <p class="pd">Pesquisa: <input type="text" name="" id="pesquisa" value="" onkeyup="search(this.value)" placeholder="Pesquisar"><button id="downloadExcel">Baixar Tabela de Preços Nuance</button><button id="downloadPDF">Baixar Tabela de Preços Pro Hair</button></p>
         <div class="prodcontainer">
             {{produtos | safe}}
         </div>

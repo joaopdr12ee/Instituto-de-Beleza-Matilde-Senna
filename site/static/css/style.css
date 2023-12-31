@@ -455,3 +455,30 @@ form input[type='file']{
     color: greenyellow;
     transition: .5s;
 }
+
+.pd{
+    display: flex;
+    gap: 1rem;
+}
+.pd #pesquisa{
+    color: #111;
+    border-radius: 10px;
+    border: 2px solid var(--color-1);
+    padding: 10px;
+}
+.pd button{
+    border-radius: 10px;
+    padding: 10px;
+    border: 2px solid var(--color-1);
+    color: #111;
+    transition: .5s;
+}
+.pd button:hover{
+    cursor: pointer;
+    background-color: var(--color-primary);
+    border-radius: 10px;
+    padding: 10px;
+    border: 2px solid var(--color-1);
+    color: #111;
+    transition: .5s;
+}

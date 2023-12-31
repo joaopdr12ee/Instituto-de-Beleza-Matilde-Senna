@@ -1,5 +1,36 @@
 localStorageCarrinho = 'Carrinho'
 
+document.getElementById('downloadExcel').addEventListener('click', function() {
+    // Substitua 'caminho/para/sua/planilha.xlsx' pelo caminho real do seu arquivo Excel
+    var planilhaUrl = '/static/archives/Nuance.xlsx';
+    downloadFile(planilhaUrl);
+});
+
+document.getElementById('downloadPDF').addEventListener('click', function() {
+    // Substitua 'caminho/para/seu/arquivo.pdf' pelo caminho real do seu arquivo PDF
+    var pdfUrl = '/static/archives/Prohair.pdf';
+    downloadFile(pdfUrl);
+});
+
+function downloadFile(fileUrl) {
+    // Cria um elemento de link temporário
+    var link = document.createElement('a');
+    link.href = fileUrl;
+
+    // Define o atributo 'download' para baixar o arquivo com o nome original
+    link.download = fileUrl.substr(fileUrl.lastIndexOf('/') + 1);
+
+    // Adiciona o link ao corpo do documento
+    document.body.appendChild(link);
+
+    // Aciona o clique no link
+    link.click();
+
+    // Remove o link do corpo do documento
+    document.body.removeChild(link);
+}
+
+
 window.addEventListener('scroll', function() {
     if (window.scrollY > 100) {
         document.querySelector('.navbar').style.background = '#111';
@@ -44,4 +75,18 @@ function sendcarrinho(){
     }
     textopadrao = `Bom dia, eu me interessei nos produtos:%0A${carrinho}no valor total de ${document.getElementById('total').innerHTML} e gostaria de fazer um orçamento.`
     window.open(` https://wa.me/553197486420?text=${textopadrao}`, '_blank');
+}
+
+
+function search(value){
+    creury = document.querySelectorAll('.searched')
+    value = value.toUpperCase()
+    for(i=0;i != creury.length;i++){
+        creu = creury[i].id
+        if(creu.toUpperCase().includes(value)==false){
+            document.getElementById(creu).style.display = 'none';
+        }else{
+            document.getElementById(creu).style.display = 'block'
+        }
+    }
 }
