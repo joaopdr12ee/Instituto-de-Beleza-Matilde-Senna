@@ -37,10 +37,7 @@ function produtoslink(){
     document.getElementById('produtos').click();
 }
 
-function send(name,value){
-    textopadrao = `Bom dia, eu me interessei no produto ${name}, no valor de ${value} e gostaria de fazer um orçamento.`
-    window.open(` https://wa.me/553197486420?text=${textopadrao}`, '_blank');
-}
+
 document.getElementById("Contato").addEventListener("click", function() {
     window.scrollTo({top:document.body.scrollHeight - 1050,
         behavior: 'smooth'});

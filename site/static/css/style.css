@@ -434,3 +434,24 @@ form input[type='file']{
     font-size: 20px;
     color: var(--color-primary);
 }
+
+.items{
+    max-height: 300px;
+    width: 200px;
+    overflow-y: scroll;
+}
+
+.items p{
+    display: flex;
+    align-items: center;
+}
+
+#carrinhoorcamento{
+    transition: .5s;
+}
+
+#carrinhoorcamento:hover{
+    cursor: pointer;
+    color: greenyellow;
+    transition: .5s;
+}
